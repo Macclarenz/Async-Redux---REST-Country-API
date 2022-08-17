@@ -1,0 +1,26 @@
+@use '../abstract/' as *;
+
+#searchTermText {
+    @include resetInput();
+    background-color: transparent;
+    
+    color: $white;
+    font-size: 16px;
+    padding: 0.75em;
+    text-indent: 0.5em;
+    text-overflow: ellipsis;
+    width: 90%;
+
+    &::placeholder {
+        color: $placeholder-white;
+    }
+}
+
+.search-icon {
+    fill: $white;   
+    font-size: 24px;
+    position: absolute;
+    right: calc(0em + 0.5em);
+    pointer-events: none;
+    z-index: 10;
+}

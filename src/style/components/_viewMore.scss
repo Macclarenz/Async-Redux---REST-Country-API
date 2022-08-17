@@ -1,0 +1,42 @@
+@use '../abstract/' as *;
+
+.load-more-container {
+    @include flex(center, center, column);
+    width: 100%;
+    padding: 1em;
+
+    #loadMoreBtn {
+        @include resetInput(pointer);
+        color: $purple;
+        font-size: 16px;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-color: $purple;
+            height: 2px;
+            width: 85%;
+            position: absolute;
+            bottom: -0.25em;
+            left: -0.25em;
+            right: 0em;
+            transform: scaleX(0);
+            transition: all 400ms ease-out;
+        }
+
+        .down-arrow-icon {
+            margin-left: 0.25em;
+            transition: all 400ms ease-out;
+        }
+
+        &:hover {
+            &::before {
+                transform: scaleX(1);
+            }
+            
+            .down-arrow-icon {
+                transform: translateY(0.25em);
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@use '../abstract/' as *;
+
+$grey: grey;
+$lighter-grey: rgb(194, 194, 194);
+
+.view-more-loading-container {
+    @include flex(center, center);
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: $grey 0 0 1em;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    // bottom: 150%;
+    transform: translateY(calc(-100% * 3));
+
+    $custom-ease-out: cubic-bezier(0.29, 0.76, 0.63, 1.03);
+    animation: animate-view-more-initiate 0.5s $custom-ease-out;
+
+    @keyframes animate-view-more-initiate {
+        0% {
+            opacity: 0;
+            transform: translateY(0) scale(0);
+        } 100% {
+            opacity: 1;
+            transform: translateY(calc(-100% * 3)) scale(1);
+        }
+    }
+
+    .view-more-loading {
+        border-top: 3px solid $purple;
+        border-bottom: 3px solid $purple;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-radius: inherit;
+        display: block;
+        height: 65%;
+        width: 65%;
+
+        $flat-ease: cubic-bezier(0.29, 0.31, 0.68, 0.66);
+        animation: animate-view-more-circle 2s $flat-ease infinite;
+
+        @keyframes animate-view-more-circle {
+            0% {
+                transform: rotate(0);
+            } 100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@use '../abstract/' as *;
+
+$grey: grey;
+$lighter-grey: rgb(194, 194, 194);
+
+.country-loading-container {
+    @include flex(center, center, row, nowrap, 0.5em);
+    border-radius: 0.5em;
+    height: 70vmin;
+    width: 100%;
+    padding: 2em;
+    margin-top: 1em;
+
+    .country-loading {
+        $circle-timing-func: cubic-bezier(0.31, 0.32, 0.64, 0.65);
+
+        border-top: 3px solid $purple;
+        border-bottom: 3px solid $purple;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+
+        border-width: 5px;
+        border-radius: 50%;
+        display: block;
+        height: 50px;
+        width: 50px;
+
+        animation: animate-country-circle 2s infinite;
+        animation-timing-function: $circle-timing-func;
+        animation-fill-mode: forwards;
+
+        @keyframes animate-country-circle {
+            0% {
+                transform: rotate(0);
+            } 100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}

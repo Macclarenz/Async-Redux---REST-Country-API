@@ -1,0 +1,76 @@
+@use './abstract/' as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: $open-sans;
+}
+
+main {
+    min-height: 100vh;
+    position: relative;
+}
+
+.input-container {
+    @include flex(center, center, column);
+    background-color: $purple;
+    padding-block: 1.5em;
+    padding-inline: 5%;
+
+    .search-container, 
+    .filter-container {
+        width: min(100%, 550px);
+    }
+
+    .search-container {
+        @include flex(flex-start, center, row);
+        border: 1px solid $white;
+        border-radius: 1.5em;
+        position: relative;
+    }
+
+    .filter-container {
+        @include flex(space-between, center, row, wrap, 0.5em);
+        margin-top: 1em;
+    }
+}
+
+.country-container {
+    @include flex(space-evenly, flex-start, row, wrap, 2em);
+    @include centerElement();
+    overflow: hidden;
+    max-height: 2000px;
+    padding-block: 2em;
+    transition: all 500ms ease;
+}
+
+.load-more-container {
+    box-shadow: rgba(0, 0, 0, 0.486)  0 0 1em;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .input-container {
+        @include flex(center, flex-start, column);
+
+        .filter-container {
+            justify-content: flex-start;
+            gap: 2em;
+            margin-left: 0.5em;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .input-container {
+        @include flex(flex-start, center, row);
+
+        .filter-container {
+            margin-top: 0;
+            margin-left: 2em;
+        }
+    }
+}

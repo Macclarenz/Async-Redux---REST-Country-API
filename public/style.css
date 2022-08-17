@@ -1,0 +1,108 @@
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/style.scss ***!
+  \***************************************************************************************************************/
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  background-color: rgb(194, 194, 194);
+  border-radius: 0.5em;
+  height: min(300px, 100%);
+  width: min(550px, 100%);
+  padding: 2em;
+  margin-top: 1em;
+}
+.loading-container .loading-dot {
+  animation: animate-dot 1000ms ease;
+  animation-iteration-count: infinite;
+  background-color: grey;
+  border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+.loading-container .loading-dot-1 {
+  animation-delay: 100ms;
+}
+.loading-container .loading-dot-2 {
+  animation-delay: 200ms;
+}
+.loading-container .loading-dot-3 {
+  animation-delay: 300ms;
+}
+.loading-container .loading-dot-4 {
+  animation-delay: 400ms;
+}
+@keyframes animate-dot {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0em);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1) translateY(-0.5em);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0em);
+  }
+}
+
+.loading-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  background-color: rgb(194, 194, 194);
+  border-radius: 0.5em;
+  height: min(300px, 100%);
+  width: min(550px, 100%);
+  padding: 2em;
+  margin-top: 1em;
+}
+.loading-circle-container .loading-circle {
+  border-top: 3px solid grey;
+  border-bottom: 3px solid grey;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-width: 5px;
+  border-radius: 50%;
+  display: block;
+  height: 50px;
+  width: 50px;
+  animation: animate-circle 2s infinite;
+  animation-timing-function: cubic-bezier(0.31, 0.32, 0.64, 0.65);
+  animation-fill-mode: forwards;
+}
+@keyframes animate-circle {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+/*# sourceMappingURL=style.css.map*/
